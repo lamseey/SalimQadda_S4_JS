@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QCM</title>
+    <link rel="stylesheet" href="qcm.css">
+    <script src="qcm.js"></script>
+</head>
+<body>
+    <div id="startPage">
+        <h1 class="header">QCM</h1>
+        <form id="startForm">
+            <label for="numQuestions">Nombre de questions: </label>
+            <input type="number" id="numQuestions" min="1" max="50" required value="10">
+            <label for="category">Catégorie: </label>
+            <select id="category">
+                <option value="">Toutes les catégories</option>
+                <option value="9">Connaissances générales</option>
+                <option value="10">Divertissement: Livres</option>
+                <option value="11">Divertissement: Film</option>
+                <option value="12">Divertissement: Musique</option>
+                <option value="13">Divertissement: Comédies musicales et théâtres</option>
+                <option value="14">Divertissement: Télévision</option>
+                <option value="15">Divertissement: Jeux vidéo</option>
+                <option value="16">Divertissement: Jeux de société</option>
+                <option value="17">Science et Nature</option>
+                <option value="18">Science: Informatique</option>
+                <option value="19">Science: Mathématiques</option>
+                <option value="20">Mythologie</option>
+                <option value="21">Sports</option>
+                <option value="22">Géographie</option>
+                <option value="23">Histoire</option>
+                <option value="24">Politique</option>
+                <option value="25">Art</option>
+                <option value="26">Célébrités</option>
+                <option value="27">Animaux</option>
+                <option value="28">Véhicules</option>
+                <option value="29">Divertissement: Bandes dessinées</option>
+                <option value="30">Science: Gadgets</option>
+                <option value="31">Divertissement: Anime et Manga japonais</option>
+                <option value="32">Divertissement: Dessins animés et animations</option>
+
+            </select>
+            <label for="difficulty">Difficulté: </label>
+            <select id="difficulty">
+                <option value="">Toutes les difficultés</option>
+                <option value="easy">Facile</option>
+                <option value="medium">Moyen</option>
+                <option value="hard">Difficile</option>
+            </select>
+            <label for="type">Type: </label>
+            <select id="type">
+                <option value="">Tous les types</option>
+                <option value="multiple">Choix multiples</option>
+                <option value="boolean">Vrai/Faux</option>
+            </select>
+            <label for="encode">Encodage: </label>
+            <select id="encode">
+                <option value="">Encodage par défaut</option>
+                <option value="legacy">Legacy URL Encoding</option>
+                <option value="url3986">URL Encoding (RFC3986)</option>
+                <option value="base64">Base64 Encoding</option>
+            </select>
+            <input type="submit" onclick="startQuestions()" id="startButton" value="Commencer">
+        </form>
+    </div>
+    <div id="finalPage">
+        <h1 class="header">QCM</h1>
+        <h2 id="finalScore">Your score: 0</h2>
+        <button onclick="window.location.reload()" id="restartButton">Recommencer</button>
+    </div>
+    <div class="main-content" id="main-content">
+        <div class="flex-container">
+            <div class="timer-container">
+                <svg width="120" height="120">
+                <circle class="progress" cx="60" cy="60" r="50" stroke="blue" stroke-width="10" fill="none"
+                    stroke-dasharray="314" stroke-dashoffset="314" stroke-linecap="round"></circle>
+                </svg>
+                <div class="timer">10</div>
+                </div>
+            <h1 class="header">QCM</h1>
+            <span class="questions-count">0 / 0</span>
+        </div>
+        <h2 class="question">
+        </h2>
+        <div class="answers">
+        </div>
+    </div>
+
+</body>
+</html>

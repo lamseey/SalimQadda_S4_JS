@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QCM</title>
+    <link rel="stylesheet" href="qcm.css">
+    <script src="qcm.js"></script>
+</head>
+<body>
+    <div id="startPage">
+        <h1 class="header">QCM</h1>
+        <button onclick="startQuestions()" id="startButton">Commencer</button>
+    </div>
+    <div id="finalPage">
+        <h1 class="header">QCM</h1>
+        <h2 id="finalScore">Your score: 0</h2>
+        <button onclick="startQuestions()" id="restartButton">Recommencer</button>
+    </div>
+    <div class="main-content" id="main-content">
+        <div class="flex-container">
+            <div class="timer-container">
+                <svg width="120" height="120">
+                <circle class="progress" cx="60" cy="60" r="50" stroke="blue" stroke-width="10" fill="none"
+                    stroke-dasharray="314" stroke-dashoffset="314" stroke-linecap="round"></circle>
+                </svg>
+                <div class="timer">10</div>
+                </div>
+            <h1 class="header">QCM</h1>
+            <span class="questions-count">0 / 0</span>
+        </div>
+        <h2 class="question">
+        </h2>
+        <div class="answers">
+        </div>
+    </div>
+
+</body>
+</html>

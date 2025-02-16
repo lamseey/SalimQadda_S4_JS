@@ -1,0 +1,122 @@
+.main-content{
+    display: none;
+    margin: 2em 5em 0 5em;
+    background-color: #92c7ff;
+    border-radius: 5em;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#startPage{
+    background-color: #92c7ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5em;
+    margin: 2em 5em 5em 5em;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#finalPage{
+    border-radius: 5em;
+    display: none;
+    background-color: #92c7ff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 5em 5em 5em;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+#finalScore{
+    text-align: center;
+    font-size: 2em;
+    color: darkblue;
+    margin: 1em;
+    font-weight: bold;
+}
+
+#restartButton{
+    font-size: 2em;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 2em;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    border-radius: 10px;
+    margin: 1em;
+}
+
+.header{
+    font-size: 4em;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#startButton{
+    font-size: 2em;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 2em;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    border-radius: 10px;
+    margin: 1em;
+}
+.timer-container {
+    position: relative;
+    width: 7.5em;
+    height: 7.5em;
+    color: darkblue;
+}
+
+svg {
+    transform: rotate(-90deg);
+    position: absolute;
+}
+
+.timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.questions-count {
+    font-size: 2em;
+    color: darkblue;
+    margin: 1em;
+    font-weight: bold;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question {
+    font-size: 2em;
+    text-align: center;
+    margin: 1em;
+    font-weight: bold;
+}
+.answers{
+    margin: 0 10em 10em 10em;
+}
+.answer{
+    width: 100%;
+    padding: 1em;
+    margin: .5em;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: lightgray;
+    border: 0.1em solid black;
+    border-radius: 1em;
+}
