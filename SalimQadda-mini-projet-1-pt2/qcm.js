@@ -44,6 +44,10 @@ function questionStart(i) {
     if (i === choices.length){
         document.getElementById("startPage").style.display = "none";
         document.getElementById("finalPage").style.display = "flex";
+        if (i === 0){
+            document.getElementById("finalScore").innerHTML = "Erreur: Aucune question n'a pu être générée avec ces paramètres. Réessayez avec des paramètres différents.";
+            return;
+        }
         document.getElementById("finalScore").innerHTML = "Votre score est de " + score + " / " + choices.length;
         window.scrollTo({ top: 0, behavior: "smooth" });
         return;}
