@@ -78,7 +78,7 @@ function questionStart(i) {
             if (j === x) {
                 score += 1;
             }
-            answer.style.backgroundColor = "orange";
+            answer.style.backgroundColor = "red";
             document.getElementsByClassName("answer")[x + totalChoices].style.backgroundColor = "green";
             totalChoices += choices[i].incorrect_answers.length + 1;
             myQuestion.style.opacity = "0.4";
