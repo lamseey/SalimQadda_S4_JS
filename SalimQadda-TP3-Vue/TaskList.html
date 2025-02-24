@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TaskList</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .todo {
+            color: red;
+        }
+        .done {
+            color: green;
+        }
+        .filter-button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>TaskList</h1>
+
+        <p>Total des tâches : {{ totalTasks }}</p>
+
+        <button @click="filter = 'all'" class="filter-button" :class="{ active: filter === 'all' }">Toutes</button>
+        <button @click="filter = 'todo'" class="filter-button" :class="{ active: filter === 'todo' }">À faire</button>
+        <button @click="filter = 'done'" class="filter-button" :class="{ active: filter === 'done' }">Terminées</button>
+
+        <ul>
+            <li v-for="task in filteredTasks" :key="task.id" :class="task.completed ? 'done' : 'todo'">
+                <p>{{ task.id }}</p>
+                <p>{{ task.title }}</p>
+                <p>{{ task.description }}</p>
+                <p>{{ task.completed ? 'Terminée' : 'À faire' }}</p>
+                <button class="filter-button" v-show="!task.completed" @click="markAsDone(task)">Marquer comme terminée</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    tasks: [],
+                    filter: 'all',
+                    fallbackTasks: [
+                        {
+      "id": 1,
+      "title": "Faire les courses",
+      "description": "Acheter des légumes et du lait.",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Faire du sport",
+      "description": "Courir pendant 30 minutes.",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "title": "Réviser pour l'examen",
+      "description": "Relire le chapitre 5 du manuel.",
+      "completed": false
+    }
+                    ]
+                };
+            },
+            computed: {
+                filteredTasks() {
+                    if (this.filter === 'todo') {
+                        return this.tasks.filter(task => !task.completed);
+                    } else if (this.filter === 'done') {
+                        return this.tasks.filter(task => task.completed);
+                    }
+                    return this.tasks;
+                },
+                totalTasks() { // Ajouté
+                    return this.tasks.length;
+                } // Ajouté
+            },
+            methods: {
+                markAsDone(task) {
+                    task.completed = true;
+                }
+            },
+            mounted() {
+                fetch('taskList.json')
+                    .then(response => response.json())
+                    .then(json => {
+                        this.tasks = json;
+                    }).catch(error => {
+                        this.tasks = this.fallbackTasks;
+                    });
+            }
+        }).mount('#app');
+
+    </script>
+</body>
+</html>

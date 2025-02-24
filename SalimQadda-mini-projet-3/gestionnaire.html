@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionnaire tâches hebdodmadaires</title>
+  <style>
+    #exTache{
+        display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gestionnaire des tâches hebdomadaires</h1>
+  <h2 id="clock">
+  </h2>
+  <ul id="Gestionnaire">
+    <li id="exTache" class="uneTache">
+      <input class="checking" type="checkbox" name="tache1">
+      <input type="number" name="heure" min="0" max="23" class="heure">:
+      <input type="number" name="minute" min="0" max="59" class="minute">
+      <input type="text" name="description" class="description">
+      <button class="deletion">-</button>
+    </li>
+  </ul>
+  <button onclick="ajouterTache()" id="ajoutTache">+</button>
+<div id="test"></div>
+</body>
+<script src="gestionnaire.js"></script>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Manipulation de vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        #monapp {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .bouton {
+            padding: 10px 15px;
+        }
+        p {
+            color: red;
+            font-weight: bold;
+        }
+        span {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="monapp">
+	<button @click="clique">
+        {{ titre }}
+    </button>
+    <div>
+        <button class="bouton" @click="increase">
+            ++
+        </button>
+        <span>
+            {{ number }}
+        </span>
+        <button class="bouton" @click="decrease">
+            --
+        </button>
+    </div>
+    <div>
+        <p v-show="hasError">
+            Il ne faut pas mettre d'espaces
+        </p>
+        <input @input="checkSpace" v-model="userInput">
+    </div>
+</div>
+<script>
+	const appli = {
+		data () {
+				return {
+					titre: "Cliquez moi!",
+                    number: 0,
+                    hasError: false,
+                    userInput: ""
+				}
+			},
+        methods: {
+            clique() {
+                this.titre = "Cliqué!"
+            },
+            increase() {
+                this.number++
+            },
+            decrease() {
+                this.number--
+            },
+            checkSpace() {
+                this.hasError = this.userInput.includes(" ");
+            }
+        }
+	};
+
+Vue.createApp(appli).mount("#monapp");
+</script>
+
+</body>
+</html>
