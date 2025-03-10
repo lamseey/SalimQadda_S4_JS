@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+	max-width: 1200px;
+	margin: auto;
+	padding: 16px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 16px;
+	padding: 8px;
+	background-color: #7451eb;
+	text-align: center;
+	color: white;
+}
+header img {
+	height: 60px;
+	margin-left: 1rem;
+}
+header h1 {
+	flex-grow: 1;
+}
+
+main {
+	display: flex;
+	flex-direction: row;
+}
+
+#trier{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #7451eb;
+	width: 30%;
+	font-size: 3vh;
+	margin-left: 50%;
+}
+
+#bpanier{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #7451eb;
+	width: 30%;
+	font-size: 3vh;
+	margin-left: 50%;
+}
+#vpanier{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #7451eb;
+	width: 60%;
+	font-size: 2vh;
+}
+.epanier{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #7451eb;
+	width: 40%;
+	height: 4vh;
+	font-size: 1.5vh;
+}
+
+.filtres {
+	border-radius: 4px;
+	box-shadow: 0px 0px 4px gray;
+	margin: 8px;
+	padding: 8px;
+	min-width: 300px;
+	min-height: 400px;
+}
+.filtres h3 {
+	text-align: center;
+}
+.filtre-produit {
+	margin-top: 8px;
+}
+
+.fiches {
+	flex: 1;
+	margin: 8px;
+}
+.fiches img {
+	max-width: 200px;
+}
+.fiches p {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+#search{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #7451eb;
+	width: 100%;
+	font-size: 3vh;
+}
