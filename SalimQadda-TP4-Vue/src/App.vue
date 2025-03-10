@@ -29,7 +29,7 @@
           <div id="panier">
             <h4>Panier</h4>
             <p>Nombre de produits: {{panier.length}}</p>
-            <button id="vpanier" @click="produits.forEach(produit => produit.panier = 0)">Vider le panier</button>
+            <button id="vpanier" @click="panier = []">Vider le panier</button>
             <p>Prix total: {{totalPrixPanier}} €</p>
             <ul v-for="produit in panier" :key="produit.id">
               <li>
