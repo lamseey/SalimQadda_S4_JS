@@ -1,7 +1,7 @@
 <template>
   <div class="home">
+    <TagCloud :tags="tags"></TagCloud>
     <PostList :posts="posts"></PostList>
-    <TagCloud></TagCloud>
   </div>
 </template>
 
@@ -21,11 +21,19 @@ export default{
   },
   data() {
     return{
-      posts: []
+      posts: [],
+      tags: []
     }
   },
   created() {
     this.posts = rawData;
+    for (let post of this.posts){
+      for (let tag of post.tags){
+        if (!this.tags.includes(tag)){
+          this.tags.push(tag)
+        }
+      }
+    }
   }
 }
 

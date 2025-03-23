@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import myPosts from "@/posts.json"
+import Data from "@/posts.json"
 import TagCloud from "@/components/TagCloud.vue";
 export default{
   name: "PostDetail",
@@ -19,7 +19,7 @@ export default{
     }
   },
   created() {
-    for (let post of myPosts){
+    for (let post of Data){
       if(post.id === parseInt(this.$route.params.id)){
         this.myPost = post;
         break;

@@ -6,7 +6,7 @@ export default{
   },
   methods: {
     goToDetails() {
-      this.$router.push({name: 'PostDetail', params: {id: this.post.id}})
+      this.$router.push("/post/" + this.post.id);
     }
   }
 }

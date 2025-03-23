@@ -11,11 +11,20 @@ export default{
       myposts: []
     }
   },
+  watch: {
+    '$route.params.tag' : 'filterByTags'
+  },
   mounted(){
     this.posts = rawData
-    for (let post of this.posts){
-      if (post.tags.includes(this.$route.params.tag)){
-        this.myposts.push(post)
+    this.filterByTags()
+  },
+  methods: {
+    filterByTags(){
+      this.myposts = [];
+      for (let post of this.posts){
+        if (post.tags.includes(this.$route.params.tag)){
+          this.myposts.push(post)
+        }
       }
     }
   }
@@ -34,6 +43,6 @@ export default{
   padding: 0.2rem 0.5rem;
   border-radius: 3px;
   margin-right: 0.5rem;
-  font-size: 5rem;
+  font-size: 3rem;
   }
 </style>
